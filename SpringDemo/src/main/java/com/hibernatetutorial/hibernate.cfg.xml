@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 5.3//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-5.3.dtd">  
+  
+<hibernate-configuration>  
+  
+    <session-factory>  
+        <property name="hbm2ddl.auto">update</property>
+        <!-- dbcp connection pool configuration -->
+        <property name="hibernate.dbcp.initialSize">5</property>
+        <property name="hibernate.dbcp.maxTotal">20</property>
+        <property name="hibernate.dbcp.maxIdle">10</property>
+        <property name="hibernate.dbcp.minIdle">5</property>
+        <property name="hibernate.dbcp.maxWaitMillis">-1</property>
+          
+        <property name="dialect">org.hibernate.dialect.MySQL57Dialect</property>  
+        <property name="connection.url">jdbc:mysql://localhost:3306/wp</property>  
+        <property name="connection.username">magento</property>  
+        <property name="connection.password">magento123</property>  
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="show_sql">true</property>
+ 
+        <!-- Specifying Session Context -->
+        <property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
+ 
+        <!-- Mapping With Model Class Containing Annotations -->
+        <!-- <mapping class="com.hibernatetutorial.maven.emp1000" /> -->
+    <mapping resource="com/hibernatetutorial/employee.hbm.xml"/>  
+    </session-factory>  
+  
+</hibernate-configuration>  

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns = "http://www.springframework.org/schema/beans"
+   xmlns:xsi = "http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation = "http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- <bean id="parentTriangle" class = "com.SpringDemo.Triangle">
+		<property name="pointA" ref="zeroPoint"/>
+
+	</bean> -->
+
+   <!-- <bean id = "triangle" class = "com.SpringDemo.Triangle" parent="parentTriangle">
+  	<property name="pointA" ref="zeroPoint"/>
+   	<property name="pointB" ref="Point2"/>
+   	<property name="pointC" ref="Point3"/>
+   </bean>
+   
+   <bean id="zeroPoint" class="com.SpringDemo.Point">
+   	<property name = "x" value="1"/>
+   	<property name = "y" value = "0"/>
+   </bean>
+   
+   <bean id="Point2" class="com.SpringDemo.Point">
+   	<property name = "x" value = "2"/>
+   	<property name = "y" value = "3"/>
+   </bean>
+   
+   <bean id="Point3" class="com.SpringDemo.Point">
+   	<property name = "x" value = "-2"/>
+   	<property name = "y" value = "-3"/>
+   </bean> -->
+   
+   <bean id = "triangle" class = "com.SpringDemo.Triangle" autowire="byName">
+   </bean>
+   
+   <bean id="pointA" class="com.SpringDemo.Point">
+   	<property name = "x" value="1"/>
+   	<property name = "y" value = "0"/>
+   </bean>
+   
+   <bean id="pointB" class="com.SpringDemo.Point">
+   	<property name = "x" value = "2"/>
+   	<property name = "y" value = "3"/>
+   </bean>
+   
+   <bean id="pointC" class="com.SpringDemo.Point">
+   	<property name = "x" value = "-2"/>
+   	<property name = "y" value = "-3"/>
+   </bean>
+
+</beans>
